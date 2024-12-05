@@ -1,6 +1,6 @@
 //examples of some built in functions
 
-let myName = "Mr John Mr";
+// let myName = "Mr John Mr";
 // console.log(myName.length);
 // console.log(myName.at(3));
 // console.log(myName.at(myName.length - 1));
@@ -29,8 +29,27 @@ let myName = "Mr John Mr";
 
 // console.log(myName.slice(3, 7));
 
-function sum(a = 0, b = 0) {
-  console.log(a + b);
+// function sum(a = 0, b = 0) {
+//   console.log(a + b);
+// }
+// sum();
+// sum(5, 500);
+
+// function sum(...all) {
+//   let res = 1
+//   for (let index = 0; index < all.length; index++) {
+//     res *= all[index];
+//   }
+//   return res;
+// }
+// console.log(sum(5, 10, 15, 20, 30, 50));
+
+function sum(...all) {
+  let res = all.reduce(function (prv, cur) {
+    console.log("p", prv);
+    console.log("c", cur);
+    return prv + cur;
+  });
+  return res;
 }
-sum();
-sum(5, 500);
+console.log(sum(5, 10, 15, 20, 30, 50));
